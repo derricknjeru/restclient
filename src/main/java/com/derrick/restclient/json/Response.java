@@ -23,14 +23,15 @@ public class Response {
     public void setStatus(String status) {
         this.status = status;
     }
-
     public Location getLocation() {
         return results.get(0).getGeometry().getLocation();
     }
 
-    public String getFormattedAddress(String status) {
+    public String getFormattedAddress() {
         return results.get(0).getFormattedAddress();
     }
+
+
 
 
 }

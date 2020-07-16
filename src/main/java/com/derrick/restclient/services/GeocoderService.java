@@ -26,11 +26,14 @@ public class GeocoderService {
 
     public Site getLatLng(String... address) {
         String joinedAddress = String.join(",", address);
+
         String encodedAddress = URLEncoder.encode(joinedAddress, StandardCharsets.UTF_8);
+
         String url = String.format("%s?address=%s&key=%s", BASE, encodedAddress, KEY);
 
         Response response = restTemplate.getForObject(url, Response.class);
 
+        assert response != null;
         return new Site(response.getFormattedAddress(),
                 response.getLocation().getLat(),
                 response.getLocation().getLng());

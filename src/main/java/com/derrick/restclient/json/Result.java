@@ -1,9 +1,12 @@
 
 package com.derrick.restclient.json;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Result {
+   // @JsonProperty("formatted_address")
     private String formattedAddress;
     private Geometry geometry;
     private String placeId;

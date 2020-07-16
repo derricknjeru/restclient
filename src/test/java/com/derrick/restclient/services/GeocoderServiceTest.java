@@ -18,6 +18,7 @@ class GeocoderServiceTest {
 
     private Logger logger = LoggerFactory.getLogger(GeocoderServiceTest.class);
 
+
     @Test
     void getLatLngForGoogleHeadQuarters() {
 
@@ -34,7 +35,7 @@ class GeocoderServiceTest {
 
         Site site = service.getLatLng("Boston", "MA");
 
-        logger.info(String.valueOf(site));
+        logger.info(site.toString());
 
         Assert.assertEquals(42.36, site.getLatitude(), 0.01);
         Assert.assertEquals(-71.05, site.getLongitude(), 0.01);
